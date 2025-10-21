@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sevan\\Documents\\Cesi\\C#\\MonPremierProjet\\MonPremierProjet.csproj": {}
+    "C:\\Users\\sevan\\Documents\\Cesi\\C#\\Git Algo\\Projets-Perso\\MonPremierProjet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sevan\\Documents\\Cesi\\C#\\MonPremierProjet\\MonPremierProjet.csproj": {
+    "C:\\Users\\sevan\\Documents\\Cesi\\C#\\Git Algo\\Projets-Perso\\MonPremierProjet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sevan\\Documents\\Cesi\\C#\\MonPremierProjet\\MonPremierProjet.csproj",
+        "projectUniqueName": "C:\\Users\\sevan\\Documents\\Cesi\\C#\\Git Algo\\Projets-Perso\\MonPremierProjet.csproj",
         "projectName": "MonPremierProjet",
-        "projectPath": "C:\\Users\\sevan\\Documents\\Cesi\\C#\\MonPremierProjet\\MonPremierProjet.csproj",
+        "projectPath": "C:\\Users\\sevan\\Documents\\Cesi\\C#\\Git Algo\\Projets-Perso\\MonPremierProjet.csproj",
         "packagesPath": "C:\\Users\\sevan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sevan\\Documents\\Cesi\\C#\\MonPremierProjet\\obj\\",
+        "outputPath": "C:\\Users\\sevan\\Documents\\Cesi\\C#\\Git Algo\\Projets-Perso\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sevan\\AppData\\Roaming\\NuGet\\NuGet.Config"
