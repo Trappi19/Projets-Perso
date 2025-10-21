@@ -1,6 +1,6 @@
 using System;
 
-class bibou
+class BIBOU
 {
     static void Main()
     {
