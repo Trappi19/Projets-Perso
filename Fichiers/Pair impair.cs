@@ -1,3 +1,5 @@
+AfficherPairImpair.AfficherEtat(12);
+
 public class AfficherPairImpair
 {
     public static void AfficherEtat(int nombre)
