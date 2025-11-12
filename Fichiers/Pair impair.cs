@@ -1,11 +1,14 @@
-public void AfficherPairImpair(int nombre)
+public class AfficherPairImpair
 {
-    if (nombre % 2 == 0)
+    public static void AfficherEtat(int nombre)
     {
-        Console.WriteLine($"{nombre} est un nombre pair.");
-    }
-    else
-    {
-        Console.WriteLine($"{nombre} est un nombre impair.");
+        if (nombre % 2 == 0)
+        {
+            Console.WriteLine($"{nombre} est un nombre pair.");
+        }
+        else
+        {
+            Console.WriteLine($"{nombre} est un nombre impair.");
+        }
     }
 }
