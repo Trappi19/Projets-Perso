@@ -2,7 +2,7 @@
 
 // class BIBOU
 // {
-//     static void Main()
+//     static void Bap()
 //     {
 //         Console.Write("Saisis un caractère : ");
 //         string? input = Console.ReadLine();
