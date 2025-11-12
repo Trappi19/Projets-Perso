@@ -13,7 +13,9 @@
 Console.Write("Entrez une chaine de caractères : ");
 string chaine = Console.ReadLine();
 char[] tableau = chaine.ToCharArray();
+
 Console.WriteLine($"\nChaine complète : {chaine}");
+
 char[] tableauMaj = new char[tableau.Length];
 for (int i = 0; i < tableau.Length; i++)
 {
