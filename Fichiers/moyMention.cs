@@ -4,7 +4,7 @@ using System.Linq;
 
 class MoyenneMention
 {
-    static void Main()
+    static void Main00()
     {
         List<(string matiere, double note)> matieres = new List<(string, double)>();
         

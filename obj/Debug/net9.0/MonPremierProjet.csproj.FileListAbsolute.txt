@@ -32,3 +32,18 @@ C:\Users\sevan\Documents\Mes Documents\Cesi\C#\Git Algo\Projets-Perso\obj\Debug\
 C:\Users\sevan\Documents\Mes Documents\Cesi\C#\Git Algo\Projets-Perso\obj\Debug\net9.0\MonPremierProjet.AssemblyInfo.cs
 C:\Users\sevan\Documents\Mes Documents\Cesi\C#\Git Algo\Projets-Perso\obj\Debug\net9.0\MonPremierProjet.csproj.CoreCompileInputs.cache
 C:\Users\sevan\Documents\Mes Documents\Cesi\C#\Git Algo\Projets-Perso\obj\Debug\net9.0\MonPremierProjet.sourcelink.json
+D:\Documents\Programation\C#\sevan\obj\Debug\net9.0\MonPremierProjet.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documents\Programation\C#\sevan\obj\Debug\net9.0\MonPremierProjet.AssemblyInfoInputs.cache
+D:\Documents\Programation\C#\sevan\obj\Debug\net9.0\MonPremierProjet.AssemblyInfo.cs
+D:\Documents\Programation\C#\sevan\obj\Debug\net9.0\MonPremierProjet.csproj.CoreCompileInputs.cache
+D:\Documents\Programation\C#\sevan\obj\Debug\net9.0\MonPremierProjet.sourcelink.json
+D:\Documents\Programation\C#\sevan\bin\Debug\net9.0\MonPremierProjet.exe
+D:\Documents\Programation\C#\sevan\bin\Debug\net9.0\MonPremierProjet.deps.json
+D:\Documents\Programation\C#\sevan\bin\Debug\net9.0\MonPremierProjet.runtimeconfig.json
+D:\Documents\Programation\C#\sevan\bin\Debug\net9.0\MonPremierProjet.dll
+D:\Documents\Programation\C#\sevan\bin\Debug\net9.0\MonPremierProjet.pdb
+D:\Documents\Programation\C#\sevan\obj\Debug\net9.0\MonPremierProjet.dll
+D:\Documents\Programation\C#\sevan\obj\Debug\net9.0\refint\MonPremierProjet.dll
+D:\Documents\Programation\C#\sevan\obj\Debug\net9.0\MonPremierProjet.pdb
+D:\Documents\Programation\C#\sevan\obj\Debug\net9.0\MonPremierProjet.genruntimeconfig.cache
+D:\Documents\Programation\C#\sevan\obj\Debug\net9.0\ref\MonPremierProjet.dll
