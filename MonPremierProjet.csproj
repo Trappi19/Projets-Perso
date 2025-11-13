@@ -9,10 +9,12 @@
 
   <ItemGroup>
     <Compile Remove="Fichiers\+GrandNb.cs" />
+    <Compile Remove="Fichiers\intCharSpe.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="Fichiers\+GrandNb.cs" />
+    <None Include="Fichiers\intCharSpe.cs" />
   </ItemGroup>
 
 </Project>
