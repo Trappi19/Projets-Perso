@@ -2,7 +2,7 @@ using System;
 
 public class CalculatriceV2
 {
-    public static void Main2()
+    public static void Run()
     {
         Console.WriteLine("=== Calculatrice Avancée ===");
         Console.WriteLine("Choisissez une opération (1: Addition, 2: Soustraction, 3: Multiplication, 4: Division) : ");
