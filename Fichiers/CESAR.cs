@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace CESAR
 {
-    class Start
+    public class Start
         {
         public static void Run()
         {
@@ -33,16 +33,21 @@ namespace CESAR
     {
         public static void Chiffrement()
         {
+
             Console.WriteLine("Entre ton mot ou ta phrase :");
             string input = Console.ReadLine();
+
+            // Choisis le décalage
+            Console.WriteLine("Choisis le nombre de décalage :");
+            int dec = int.Parse(Console.ReadLine());
 
             // Convertir en ASCII
             List<int> codesASCII = input.Select(c => (int)c).ToList();
             Console.WriteLine("Codes ASCII : " + string.Join(", ", codesASCII));
 
             // Ajouter 3
-            List<int> codesModifies = codesASCII.Select(code => code + 3).ToList();
-            Console.WriteLine("Codes +3 : " + string.Join(", ", codesModifies));
+            List<int> codesModifies = codesASCII.Select(code => code + dec).ToList();
+            Console.WriteLine($"Codes +{dec} : " + string.Join(", ", codesModifies));
             for (int i = 0; i < codesASCII.Count; i++)
             {
                 if (codesASCII[i] > 126)
@@ -63,13 +68,17 @@ namespace CESAR
             Console.WriteLine("Entre ton mot ou ta phrase :");
             string input = Console.ReadLine();
 
+            // Choisis le décalage
+            Console.WriteLine("Choisis le nombre de décalage :");
+            int dec = int.Parse(Console.ReadLine());
+
             // Convertir en ASCII
             List<int> codesASCII = input.Select(c => (int)c).ToList();
             Console.WriteLine("Codes ASCII : " + string.Join(", ", codesASCII));
 
             // Ajouter 3
-            List<int> codesModifies = codesASCII.Select(code => code - 3).ToList();
-            Console.WriteLine("Codes +3 : " + string.Join(", ", codesModifies));
+            List<int> codesModifies = codesASCII.Select(code => code - dec).ToList();
+            Console.WriteLine($"Codes +{dec} : " + string.Join(", ", codesModifies));
             for (int i = 0; i < codesASCII.Count; i++)
             {
                 if (codesASCII[i] < 32)
