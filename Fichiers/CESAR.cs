@@ -106,9 +106,11 @@ class Recommencer
         switch(input.ToUpper())
         {
             case "O":
+                Console.Clear();
                 Start.Run();
                 break;
             case "N":
+                Console.Clear();
                 Console.WriteLine("Au revoir !");
                 break;
             default:
