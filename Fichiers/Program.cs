@@ -1,11 +1,11 @@
 using System;
-using Test1;
+using ScoreTeam;
 
 partial class Program
 {
     static void Main(string[] args)
     {
-        JustePrix.PlusOuMoins();
+        Start.Run();
 
         //Console.WriteLine("=== Voiture ===");
 

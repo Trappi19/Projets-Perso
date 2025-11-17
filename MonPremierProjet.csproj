@@ -13,6 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="Fichiers\+GrandNb.cs" />
     <None Include="Fichiers\intCharSpe.cs" />
   </ItemGroup>

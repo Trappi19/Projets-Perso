@@ -12,7 +12,7 @@ namespace CESAR
             Console.WriteLine("Choisis une option :");
             Console.WriteLine("1. Chiffrement");
             Console.WriteLine("2. Déchiffrement");
-            string choix = Console.ReadLine();
+            string? choix = Console.ReadLine();
             if (choix == "1")
             {
                 Cesar.Chiffrement();
@@ -35,7 +35,7 @@ namespace CESAR
         {
 
             Console.WriteLine("Entre ton mot ou ta phrase :");
-            string input = Console.ReadLine();
+            string? input = Console.ReadLine();
 
             // Choisis le décalage
             Console.WriteLine("Choisis le nombre de décalage :");
@@ -66,7 +66,7 @@ namespace CESAR
         public static void Déchiffrement()
         {
             Console.WriteLine("Entre ton mot ou ta phrase :");
-            string input = Console.ReadLine();
+            string? input = Console.ReadLine();
 
             // Choisis le décalage
             Console.WriteLine("Choisis le nombre de décalage :");
@@ -102,7 +102,13 @@ class Recommencer
     public static void Restart()
     {
         Console.WriteLine("Veux-tu recommencer ? (O/N)");
-        string input = Console.ReadLine();
+        string? input = Console.ReadLine();
+        if (string.IsNullOrWhiteSpace(input))
+        {
+            Console.WriteLine("Entrée invalide. Veuillez entrer O ou N.");
+            Restart();
+            return;
+        }
         switch(input.ToUpper())
         {
             case "O":

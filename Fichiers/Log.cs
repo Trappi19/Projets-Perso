@@ -12,7 +12,7 @@ namespace log
         {
             Console.WriteLine("Données enregistré");
 
-            StreamWriter sw = new StreamWriter("C:\\Users\\sevan\\Documents\\Mes Documents\\Cesi\\C#\\Projet-Perso\\Fichiers\\Log.txt", append: true);
+            StreamWriter sw = new StreamWriter("C:\\Users\\sevan\\Documents\\Mes Documents\\Cesi\\C#\\Projet-Perso\\Txt\\log.txt", append: true);
             sw.WriteLine($"{DateTime.Now}: {message}");
             sw.Close();
         }
