@@ -207,9 +207,6 @@ namespace ScoreTeam
 
 
 
-
-
-
         public void Ajouter(string path)
         { // En dev
             Console.Write("Donnez le pseudo du joueurs :");
