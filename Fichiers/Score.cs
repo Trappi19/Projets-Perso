@@ -81,14 +81,7 @@ namespace ScoreTeam
             {
                 Console.WriteLine($"{item.Key}:{item.Value}"); // Afficher dictionnaire
             }
-            Console.WriteLine("\nAs tu Autre chose à faire ? (O/N)");
-            string input = Console.ReadLine();
-
-            if (input!.ToUpper() == "O")
-            {
-                Console.Clear();
-                Start.Run();
-            }
+            Restart.Recommencer();
         }
 
 
@@ -133,14 +126,8 @@ namespace ScoreTeam
             Console.WriteLine($" {top3[0].Key} : {top3[0].Value}");
             Console.WriteLine($" {top3[1].Key} : {top3[1].Value}");
             Console.WriteLine($" {top3[2].Key} : {top3[2].Value}");
-            Console.WriteLine("\nAs tu Autre chose à faire ? (O/N)");
-            string input = Console.ReadLine();
-
-            if (input!.ToUpper() == "O")
-            {
-                Console.Clear();
-                Start.Run();
-            }
+            
+            Restart.Recommencer();
         }
 
 
@@ -174,7 +161,10 @@ namespace ScoreTeam
             string? input = Console.ReadLine();
             if (input!.ToUpper() == "O")
             {
-                AfficherScore(path);
+                foreach (var item in scores)
+                {
+                    Console.WriteLine($"{item.Key}:{item.Value}"); // Afficher dictionnaire
+                }
             }
 
 
@@ -201,6 +191,7 @@ namespace ScoreTeam
             {
                 Console.WriteLine("Cette clé n'existe pas !");
             }
+            Restart.Recommencer();
         }
 
 
@@ -233,9 +224,15 @@ namespace ScoreTeam
             //Console.WriteLine("Besoin d'ajouter une autre valeur ?");
             sw.Close();
 
+            Restart.Recommencer();
+        }
+    }
+    public class Restart
+    {
+        public static void Recommencer()
+        {
             Console.WriteLine("As tu Autre chose à faire ? (O/N)");
             string input = Console.ReadLine();
-
             if (input!.ToUpper() == "O")
             {
                 Console.Clear();
