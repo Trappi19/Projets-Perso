@@ -1,4 +1,3 @@
-using MonPremierProjet.Fichiers;
 using System;
 using Test1;
 
@@ -6,7 +5,7 @@ partial class Program
 {
     static void Main(string[] args)
     {
-        Calculette.Calculatrice();
+        JustePrix.PlusOuMoins();
 
         //Console.WriteLine("=== Voiture ===");
 
