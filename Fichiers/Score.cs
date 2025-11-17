@@ -14,7 +14,6 @@ namespace ScoreTeam
     {
         public static void Run()
         {
-            bool restart = (false);
             Console.WriteLine("=== Gestion des Scores d'Équipe ===");
             //Console.Write("Donne moi le path de ton fichier :");
             //Console.WriteLine("Donne moi le path de ton fichier scores"); //C:\\Users\\sevan\\Documents\\Mes Documents\\Cesi\\C#\\Projet-Perso\\Txt\\score.txt
