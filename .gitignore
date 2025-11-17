@@ -5,3 +5,5 @@
 /.vs
 /bin/Debug/net9.0
 obj
+Log.txt
+/Txt/score.txt
