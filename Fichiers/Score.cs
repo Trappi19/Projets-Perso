@@ -25,7 +25,7 @@ namespace ScoreTeam
             Console.WriteLine("2. Afficher le podium.");
             Console.WriteLine("3. Modifier une valeur.");
             Console.WriteLine("4. Rajouter une valeur.");
-            Console.WriteLine("4. Supprimer une score.");
+            Console.WriteLine("5. Supprimer une score.");
 
             switch (Console.ReadLine())
             {
@@ -86,10 +86,6 @@ namespace ScoreTeam
 
 
 
-
-
-
-
         public static void Classement(string path)
         {
             Score score = new Score();
@@ -131,56 +127,46 @@ namespace ScoreTeam
         }
 
 
-
-
-
-
-
         public static void Modify(string path)
         {
-            Score score = new Score();
             var scores = new Dictionary<string, double>();
+
+            // Lire le fichier et remplir le dictionnaire
             string[] lignes = File.ReadAllLines(path);
             foreach (string ligne in lignes)
             {
-                // Séparer la ligne avec ":"
                 string[] parts = ligne.Split(':');
-
-                // La clé est le premier élément (string)
-                string nom = parts[0];
-
-                // La valeur est le deuxième élément converti en double
-                double valeur = double.Parse(parts[1]);
-
-                // Ajouter au dictionnaire
-                scores.Add(nom, valeur);
-            }
-
-
-            Console.WriteLine("As tu besoin de voir les scores ? (O/N)");
-            string? input = Console.ReadLine();
-            if (input!.ToUpper() == "O")
-            {
-                foreach (var item in scores)
+                if (parts.Length == 2 && double.TryParse(parts[1], out double valeur))
                 {
-                    Console.WriteLine($"{item.Key}:{item.Value}"); // Afficher dictionnaire
+                    string nom = parts[0];
+                    scores[nom] = valeur;
                 }
             }
 
+            // Afficher les scores si demandé
+            Console.WriteLine("As-tu besoin de voir les scores ? (O/N)");
+            string? input = Console.ReadLine();
+            if (input != null && input.Trim().ToUpper() == "O")
+            {
+                foreach (var item in scores)
+                {
+                    Console.WriteLine($"{item.Key}:{item.Value}");
+                }
+            }
 
-            Console.Write("Donne le nom du joueur à modifier :");
+            // Modifier une clé existante
+            Console.Write("Donne le nom du joueur à modifier : ");
             string? nomToModify = Console.ReadLine();
-            Console.Write("Donne le nouveau score :");
-            double newScore = double.Parse(Console.ReadLine());
-            if (scores.ContainsKey(nomToModify))
+
+            if (nomToModify != null && scores.ContainsKey(nomToModify))
             {
                 Console.WriteLine($"Score actuel de {nomToModify} : {scores[nomToModify]}");
-                Console.WriteLine("Nouveau score ?");
-
-                if (int.TryParse(Console.ReadLine(), out int nouveauScore))
+                Console.Write("Nouveau score : ");
+                string? newScoreInput = Console.ReadLine();
+                if (double.TryParse(newScoreInput, out double newScore))
                 {
-                    scores[nomToModify] = nouveauScore;
-                    Console.WriteLine($"Score de {nomToModify} modifié à {nouveauScore} !");
+                    scores[nomToModify] = newScore;
+                    Console.WriteLine($"Score de {nomToModify} modifié à {newScore} !");
                 }
                 else
                 {
@@ -191,6 +177,11 @@ namespace ScoreTeam
             {
                 Console.WriteLine("Cette clé n'existe pas !");
             }
+
+            // Sauvegarder TOUT le dico dans le fichier en écrasant l'ancien contenu
+            var lignesASauver = scores.Select(kvp => $"{kvp.Key}:{kvp.Value}");
+            File.WriteAllLines(path, lignesASauver);
+
             Restart.Recommencer();
         }
 
