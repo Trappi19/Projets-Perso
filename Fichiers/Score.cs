@@ -16,12 +16,13 @@ namespace ScoreTeam
         {
             bool restart = (false);
             Console.WriteLine("=== Gestion des Scores d'Équipe ===");
-            Console.Write("Donne moi le path de ton fichier :");
-            Console.WriteLine("Donne moi le path de ton fichier scores"); //C:\\Users\\sevan\\Documents\\Mes Documents\\Cesi\\C#\\Projet-Perso\\Txt\\score.txt
-            string? path = Console.ReadLine();
+            //Console.Write("Donne moi le path de ton fichier :");
+            //Console.WriteLine("Donne moi le path de ton fichier scores"); //C:\\Users\\sevan\\Documents\\Mes Documents\\Cesi\\C#\\Projet-Perso\\Txt\\score.txt
+            //string? path = Console.ReadLine();
+            string? path = "C:\\Users\\sevan\\Documents\\Mes Documents\\Cesi\\C#\\Projet-Perso\\Txt\\score.txt";
             Console.WriteLine("Que veux tu faire ?");
             Console.WriteLine("1. Afficher le classement des scores.");
-            Console.WriteLine("2. Affiche aussi le podium.");
+            Console.WriteLine("2. Afficher le podium.");
             Console.WriteLine("3. Modifier une valeur.");
             Console.WriteLine("4. Rajouter une valeur.");
             Console.WriteLine("4. Supprimer une score.");
@@ -35,7 +36,7 @@ namespace ScoreTeam
                     Score.Classement(path);
                     break;
                 case "3":
-                    //Score.Modify(path);
+                    Score.Modify(path);
                     break;
                 case "4":
                     new Score().Ajouter(path);
@@ -49,8 +50,6 @@ namespace ScoreTeam
             }
         }
     }
-
-
 
 
 
@@ -91,7 +90,6 @@ namespace ScoreTeam
                 Start.Run();
             }
         }
-
 
 
 
@@ -173,8 +171,8 @@ namespace ScoreTeam
 
 
             Console.WriteLine("As tu besoin de voir les scores ? (O/N)");
-            string input = Console.ReadLine();
-            if (string.Equals(input, "O", StringComparison.OrdinalIgnoreCase))
+            string? input = Console.ReadLine();
+            if (input!.ToUpper() == "O")
             {
                 AfficherScore(path);
             }
