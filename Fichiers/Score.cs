@@ -20,19 +20,23 @@ namespace ScoreTeam
             string? path = Console.ReadLine();
             Console.WriteLine("Que veux tu faire ?");
             Console.WriteLine("1. Afficher le classement des scores.");
-            Console.WriteLine("2. Modifier une valeur.");
-            Console.WriteLine("3. Rajouter une valeur.");
+            Console.WriteLine("2. Affiche aussi le podium.");
+            Console.WriteLine("3. Modifier une valeur.");
+            Console.WriteLine("4. Rajouter une valeur.");
 
             switch(Console.ReadLine())
             {
                 case "1":
-                    Score.Classement();
+                    Score.AfficherScore(path);
                     break;
                 case "2":
-                    Modify.ModifierScore();
+                    //Score.Classement(path);
                     break;
                 case "3":
-                    Add.AjouterScore();
+                    //Score.Modify(path);
+                    break;
+                case "4":
+                    new Score().Ajouter(path);
                     break;
                 default:
                     Console.WriteLine("Option invalide. Veuillez choisir 1, 2 ou 3.");
@@ -104,12 +108,19 @@ namespace ScoreTeam
             Console.WriteLine($" {top3[2].Key} : {top3[2].Value}");
         }
 
-        public void Add()
-        {
+        public void Ajouter(string path)
+        { // En dev
             Console.Write("Donnez le pseudo du joueurs :");
             string? nom = Console.ReadLine();
             Console.Write("Donnez le score du joueurs :");
             double valeur = double.Parse(Console.ReadLine());
+
+            // Ecriture dans le txt
+            StreamWriter sw = new StreamWriter(path, append: true);
+            sw.WriteLine($"{nom}:{valeur}");
+            Console.WriteLine("Score ajouté.");
+            //Console.WriteLine("Besoin d'ajouter une autre valeur ?");
+            sw.Close();
         }
     }
 }
