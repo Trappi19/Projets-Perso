@@ -1,12 +1,12 @@
+using MonPremierProjet.Fichiers;
 using System;
 using Test1;
-using calculatrice;
 
 partial class Program
 {
     static void Main(string[] args)
     {
-        Calculatrice.Run();
+        Calculette.Calculatrice();
 
         //Console.WriteLine("=== Voiture ===");
 
