@@ -1,40 +1,55 @@
 using System;
+using log;
 
-
-namespace tets1
+namespace calculatrice
 {
     public class Calculatrice
     {
+        private static log.Log log = new log.Log();
         public static void Run()
         {
+            log.CleanLog();
             Console.WriteLine("=== Calculatrice Simple ===");
             Console.Write("Entrez le premier nombre : ");
             double num1 = Convert.ToDouble(Console.ReadLine());
+            log.WriteLog("Première saisi enregistré : " + num1);
 
             Console.Write("Entrez le deuxième nombre : ");
             double num2 = Convert.ToDouble(Console.ReadLine());
+            log.WriteLog("2eme saisi enregistré : " + num2);
 
             Console.Write("Sélectionnez une opération (+ - * /) : ");
             string? operation = Console.ReadLine();
+            log.WriteLog("Opération sélectionnée : " + operation);
 
             switch (operation)
             {
                 case "+":
-                    Console.WriteLine($"Résultat: {num1 + num2}");
+                    double res = (num1 + num2);
+                    Console.WriteLine($"Résultat: {res}");
                     break;
                 case "-":
-                    Console.WriteLine($"Résultat: {num1 - num2}");
+                    double res2 = (num1 - num2);
+                    Console.WriteLine($"Résultat: {res2}");
                     break;
                 case "*":
-                    Console.WriteLine($"Résultat: {num1 * num2}");
+                    double res3= (num1 * num2);
+                    Console.WriteLine($"Résultat: {res3}");
                     break;
                 case "/":
                     if (num2 != 0)
-                        Console.WriteLine($"Résultat: {num1 / num2}");
+                    {
+                        double res4 = (num1 / num2);
+                        Console.WriteLine($"Résultat: {res4}");
+                    }
                     else
+                    {
+                        log.WriteLog("Erreur de division par zéro.");
                         Console.WriteLine("Erreur: Division par zéro.");
+                    }
                     break;
                 default:
+                    log.WriteLog("Opération invalide entrée.");
                     Console.WriteLine("Opération invalide.");
                     break;
             }

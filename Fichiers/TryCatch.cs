@@ -26,5 +26,5 @@ internal class TryCatch
             finally
             {
             }
+        }
     }
-}

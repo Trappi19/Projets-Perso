@@ -1,11 +1,12 @@
 using System;
 using Test1;
+using calculatrice;
 
 partial class Program
 {
     static void Main(string[] args)
     {
-        //CESAR.Start.Run();
+        Calculatrice.Run();
 
         //Console.WriteLine("=== Voiture ===");
 
