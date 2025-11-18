@@ -4,7 +4,7 @@ partial class Program
 {
     static void Main(string[] args)
     {
-        Bulletin.Start.Run();
+        BulletinV2.Start.Run();
 
         //Console.WriteLine("=== Voiture ===");
 
