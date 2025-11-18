@@ -6,7 +6,7 @@
 
 
 using System;
-using log;
+//using log;
 
 namespace ScoreTeam
 {
@@ -25,6 +25,12 @@ namespace ScoreTeam
             Console.WriteLine("3. Modifier une valeur.");
             Console.WriteLine("4. Rajouter une valeur.");
             Console.WriteLine("5. Supprimer une score.");
+            Console.WriteLine(":==================================================:");
+            Console.WriteLine("                    En dev : ");
+            Console.WriteLine("6. Remise à zéro d'un jour.");
+            Console.WriteLine("7. Remise à zéro des scores");
+            Console.WriteLine("8. Vider le documents score.");
+            Console.WriteLine("9. Quitter le programme.");
 
             switch (Console.ReadLine())
             {
@@ -43,16 +49,26 @@ namespace ScoreTeam
                 case "5":
                     Score.Delete(path);
                     break; 
+                case "6":
+                    //Log.Reset();
+                    break;
+                case "7":
+                    //Log.ResetScore();
+                    break;
+                case "8":
+                    File.WriteAllText(path, string.Empty);
+                    Console.WriteLine("Le document score sélectionné a été vidé.");
+                    Restart.Recommencer();
+                    break;
+                case "9":
+                    Console.WriteLine("Terminé.");
+                    break;
                 default:
-                    Console.WriteLine("Option invalide. Veuillez choisir 1, 2 ou 3.");
+                    Console.WriteLine("Option invalide. Veuillez choisir un numéro parmis la liste.");
                     break;
             }
         }
     }
-
-
-
-
 
 
 
@@ -191,7 +207,56 @@ namespace ScoreTeam
 
         public static void Delete(string path)
         {
-            // En dev
+
+            var scores = new Dictionary<string, double>();
+            string[] lignes = File.ReadAllLines(path);
+            foreach (string ligne in lignes)
+            {
+                // Séparer la ligne avec ":"
+                string[] parts = ligne.Split(':');
+
+                // La clé est le premier élément (string)
+                string nom = parts[0];
+
+                // La valeur est le deuxième élément converti en double
+                double valeur = double.Parse(parts[1]);
+
+                // Ajouter au dictionnaire
+                scores.Add(nom, valeur);
+            }
+
+            Console.WriteLine("As-tu besoin de revoir la liste des joueurs ? (O/N)");
+            string? input = Console.ReadLine();
+            if (input != null && input.Trim().ToUpper() == "O")
+            {
+                foreach (var item in scores)
+                {
+                    Console.WriteLine($"{item.Key}:{item.Value}");
+                }
+            }
+            Console.Write("Donne le nom du joueur à supprimer : ");
+            string? nomToDelete = Console.ReadLine();
+            if (nomToDelete != null && scores.ContainsKey(nomToDelete))
+            {
+                scores.Remove(nomToDelete);
+
+                var lignesADelete = scores.Select(kvp => $"{kvp.Key}:{kvp.Value}");
+                File.WriteAllLines(path, lignesADelete);
+
+                Console.WriteLine($"Le joueur {nomToDelete} a été supprimé !");
+            }
+            else
+            {
+                Console.WriteLine("Erreur : Cette clé n'existe pas.");
+            }
+            Console.WriteLine("As-tu quelqu'un d'autre à supprimer ? (O/N)");
+            string? input2 = Console.ReadLine();
+            if (input2 != null && input2.Trim().ToUpper() == "O")
+            {
+                Delete(path);
+            }
+
+            Restart.Recommencer();
         }   
 
 
