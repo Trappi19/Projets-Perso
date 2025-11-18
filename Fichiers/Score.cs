@@ -25,45 +25,54 @@ namespace ScoreTeam
             Console.WriteLine("3. Modifier une valeur.");
             Console.WriteLine("4. Rajouter une valeur.");
             Console.WriteLine("5. Supprimer une score.");
-            Console.WriteLine(":==================================================:");
-            Console.WriteLine("                    En dev : ");
+            Console.WriteLine(":===================== En Dev =====================:");
             Console.WriteLine("6. Remise à zéro d'un jour.");
             Console.WriteLine("7. Remise à zéro des scores");
             Console.WriteLine("8. Vider le documents score.");
-            Console.WriteLine("9. Quitter le programme.");
+            Console.WriteLine("9. 'Q' puor quitter le programme.");
 
             switch (Console.ReadLine())
             {
                 case "1":
+                    Console.Clear();
                     Score.AfficherScore(path);
                     break;
                 case "2":
+                    Console.Clear();
                     Score.Classement(path);
                     break;
                 case "3":
+                    Console.Clear();
                     Score.Modify(path);
                     break;
                 case "4":
+                    Console.Clear();
                     new Score().Ajouter(path);
                     break;
                 case "5":
+                    Console.Clear();
                     Score.Delete(path);
                     break; 
                 case "6":
+                    Console.Clear();
                     //Log.Reset();
                     break;
                 case "7":
+                    Console.Clear();
                     //Log.ResetScore();
                     break;
                 case "8":
+                    Console.Clear();
                     File.WriteAllText(path, string.Empty);
                     Console.WriteLine("Le document score sélectionné a été vidé.");
                     Restart.Recommencer();
                     break;
                 case "9":
+                    Console.Clear();
                     Console.WriteLine("Terminé.");
                     break;
                 default:
+                    Console.Clear();
                     Console.WriteLine("Option invalide. Veuillez choisir un numéro parmis la liste.");
                     break;
             }

@@ -1,11 +1,10 @@
 using System;
-using ScoreTeam;
 
 partial class Program
 {
     static void Main(string[] args)
     {
-        Start.Run();
+        Bulletin.Start.Run();
 
         //Console.WriteLine("=== Voiture ===");
 
